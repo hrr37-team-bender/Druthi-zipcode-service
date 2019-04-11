@@ -11,7 +11,7 @@
     "server-dev": "nodemon server/server.js",
     "start": "webpack -d --watch & nodemon server/server.js",
     "react-dev": "webpack -d --watch",
-    "seed-db": "mysql -u root < schema.sql & node ./server/db/seeder.js"
+    "seed-db": "mysql -u root < schema.sql"
   },
   "dependencies": {
     "@babel/cli": "^7.1.0",
