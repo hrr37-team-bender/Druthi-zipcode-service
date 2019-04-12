@@ -82,7 +82,7 @@ class SearchZipcode extends React.Component {
             <p className="error">{errorZip}</p>
           </div>
         </div> : null}
-        {zipExists ? <ZipcodeDetails details={zipDetails[0]}/> : null}
+        {zipExists ? <ZipcodeDetails zipcode={this.state.zipcode} details={zipDetails[0]}/> : null}
       </div>
 
     );
