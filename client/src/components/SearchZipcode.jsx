@@ -58,7 +58,7 @@ class SearchZipcode extends React.Component {
       <div>
         {!zipExists ? <div className="search_zipcode_container">
           <div>
-            <label>
+            <label className="search_label">
               Enter your ZIP Code to view your availability
             </label>
             <input

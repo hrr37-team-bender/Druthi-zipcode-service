@@ -1,9 +1,14 @@
 .search_zipcode_container{
   border: 1px solid black ;
   width: 24%;
-  padding: 2%;
+  padding: 1% 1% 0% 1%;
 }
 
+.search_zipcode_container_display{
+  border: 1px solid black ;
+  width: 24%;
+  padding: 1%;
+}
 .search_zipcode_container input {
   text-align: center;
   margin-left: 13%;
@@ -13,6 +18,13 @@
   outline: none;
 }
 
+.font_size_search{
+  font-size: 12px;
+}
+
+.bold_search{
+  font-weight:bold;
+}
 .search_zipcode_container button{
   color: white;
   background-color: black;
@@ -35,7 +47,17 @@
   margin-bottom: 14px;
 }
 
+body {
+  font-family: 'helvetica neue';
+}
+
 .sold_out{
   color:red;
 }
+
+.search_label{
+  font-size: 15px;
+}
+
+
 

@@ -20,8 +20,7 @@ class OtherStoresModal extends React.Component {
     this.onChangeDistance = this.onChangeDistance.bind(this);
   }
 
-  onChangeDistance(e, zipcode) {
-    let distance = e.target.value;
+  onChangeDistance(distance, zipcode) {
     axios({
       method: 'get',
       url: `${url[mode]}/stores`,
@@ -38,6 +37,13 @@ class OtherStoresModal extends React.Component {
         });
       });
   }
+
+  componentDidMount() {
+    let zipcode = this.props.zipcode;
+    this.onChangeDistance('ten_miles', zipcode);
+  }
+
+
   render() {
     var {zipcode, productId} = this.props;
     var {stores} = this.state;
@@ -45,7 +51,7 @@ class OtherStoresModal extends React.Component {
       <p>Select a Store(Showing near ZIP "{zipcode}")</p>
       <select
         value={this.state.distance}
-        onChange={(e) => this.onChangeDistance(e, zipcode)}>
+        onChange={(e) => this.onChangeDistance(e.target.value, zipcode)}>
         <option value='ten_miles'>
           10 miles
         </option>
