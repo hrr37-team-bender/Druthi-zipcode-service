@@ -31,22 +31,23 @@ class SearchZipcode extends React.Component {
   searchZipcodeAPI(e) {
     e.preventDefault();
     var {zipcode} = this.state;
-    axios({
-      method: 'get',
-      url: `${url[mode]}/checkZipcode`,
-      params: {
-        zipcode
-      },
-      'content-type': 'plain/text'
-    })
-      .then((response) => {
-        this.setState({
-          zipDetails: response.data,
-          exists: response.data.length === 0 ? false : true,
-          errorZip: response.data.length === 0 ? 'No stores found, enter another Zip Code' : ''
+    if (zipcode !== '') {
+      axios({
+        method: 'get',
+        url: `${url[mode]}/checkZipcode`,
+        params: {
+          zipcode
+        },
+        'content-type': 'plain/text'
+      })
+        .then((response) => {
+          this.setState({
+            zipDetails: response.data,
+            exists: response.data.length === 0 ? false : true,
+            errorZip: response.data.length === 0 ? 'No stores found, enter another Zip Code' : ''
+          });
         });
-      });
-
+    }
 
   }
 
@@ -58,7 +59,7 @@ class SearchZipcode extends React.Component {
       <div>
         {!zipExists ? <div className="search_zipcode_container">
           <div>
-            <label>
+            <label className="search_label">
               Enter your ZIP Code to view your availability
             </label>
             <input
