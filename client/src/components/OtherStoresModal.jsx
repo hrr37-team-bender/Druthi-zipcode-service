@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import styles from '../styles.css';
 import axios from 'axios';
+import DisplayStores from './DisplayStores.jsx';
 
 let mode = 'development';
 let url = {
@@ -39,6 +40,7 @@ class OtherStoresModal extends React.Component {
   }
   render() {
     var {zipcode} = this.props;
+    var {stores} = this.state;
     return <div>
       <p>Select a Store(Showing near ZIP "{zipcode}")</p>
       <select
@@ -60,7 +62,7 @@ class OtherStoresModal extends React.Component {
           6.2 pc(All locations)
         </option>
       </select>
-
+      <DisplayStores stores={stores}/>
     </div>;
   }
 }
