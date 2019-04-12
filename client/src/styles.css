@@ -1,0 +1,21 @@
+.search_zipcode_container{
+  border: 1px solid black ;
+  width: 24%;
+  padding: 2%;
+}
+
+.search_zipcode_container input {
+  text-align: center;
+  margin-left: 13%;
+  margin-top: 5%;
+  padding: 3%;
+  font-size: 13px;
+  outline: none;
+}
+
+.search_zipcode_container button{
+  color: white;
+  background-color: black;
+  padding: 3%;
+  font-size: small;
+}
