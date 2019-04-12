@@ -13,10 +13,10 @@ app.use(bodyParser());
 app.use(cors());
 
 let distanceDictionary = {
-  'ten_miles': 10,
-  'twenty_miles': 20,
-  'fifty_miles': 50,
-  'hundred_miles': 100
+  'ten_miles': 1000,
+  'twenty_miles': 2000,
+  'fifty_miles': 5000,
+  'hundred_miles': 10000
 };
 
 
@@ -33,24 +33,12 @@ app.get('/stores', (req, res) => {
     if (distance === 'all') {
       res.status(200).json(results);
     } else {
-      // let promises = Promise.all(results.map(record =>
-      //   axios.get(`https://www.zipcodeapi.com/rest/${config.apiKey}/distance.json/${zipcode}/${record.zipcode}/mile`)
-      //     .then((data)=>{ //console.log(data);
-      //       return data;
-      //     })
-      //     .catch((error) => {console.log(error); })
-      // ))
-      //   .then(data => {
-      //     data.map((response, index) => {
-      //       let difference = response.data.distance;
-      //       if (distance >= difference) {
-      //         stores.push(results[index]);
-      //       }
-      //     });
-      //     //console.log(stores, "stores");
-      //   });
-      //console.log(stores);
-      res.status(200).json(results);
+      results.forEach((record) => {
+        if (Math.abs(Number(record.zipcode) - zipcode) <= distance) {
+          stores.push(record);
+        }
+      });
+      res.status(200).json(stores);
     }
   });
 });
