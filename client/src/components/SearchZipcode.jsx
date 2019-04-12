@@ -58,6 +58,7 @@ class SearchZipcode extends React.Component {
 
   render() {
     var {zipDetails, errorZip} = this.state;
+    var {productId} = this.props;
     var zipExists = zipDetails.length !== 0;
     return (
       <div>
@@ -82,7 +83,7 @@ class SearchZipcode extends React.Component {
             <p className="error">{errorZip}</p>
           </div>
         </div> : null}
-        {zipExists ? <ZipcodeDetails details={zipDetails[0]}/> : null}
+        {zipExists ? <ZipcodeDetails productId={productId} zipcode={this.state.zipcode} details={zipDetails[0]}/> : null}
       </div>
 
     );
