@@ -1,31 +1,49 @@
 // These two containers are siblings in the DOM
 import React, {Component} from 'react';
 import styles from '../styles.css';
+import axios from 'axios';
+
+let mode = 'development';
+let url = {
+  production: '',
+  development: 'http://localhost:3004'
+};
 
 class OtherStoresModal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      distance: 'ten_miles'
+      distance: 'ten_miles',
+      stores: []
     };
     this.onChangeDistance = this.onChangeDistance.bind(this);
   }
 
-  onChangeDistance(e) {
-    this.setState({
-      distance: e.target.value
-    });
+  onChangeDistance(e, zipcode) {
+    let distance = e.target.value;
+    axios({
+      method: 'get',
+      url: `${url[mode]}/stores`,
+      params: {
+        zipcode,
+        distance
+      },
+      'content-type': 'application/json'
+    })
+      .then((response) => {
+        this.setState({
+          stores: response.data,
+          distance
+        });
+      });
   }
-
-
-
   render() {
     var {zipcode} = this.props;
     return <div>
       <p>Select a Store(Showing near ZIP "{zipcode}")</p>
       <select
         value={this.state.distance}
-        onChange={this.onChangeDistance}>
+        onChange={(e) => this.onChangeDistance(e, zipcode)}>
         <option value='ten_miles'>
           10 miles
         </option>
@@ -42,6 +60,7 @@ class OtherStoresModal extends React.Component {
           6.2 pc(All locations)
         </option>
       </select>
+
     </div>;
   }
 }
