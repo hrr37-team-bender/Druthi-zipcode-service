@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import SearchZipcode from './SearchZipcode.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,7 +10,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>I can do this!!!!</div>
+      <div>
+        <SearchZipcode />
+      </div>
     );
   }
 }
