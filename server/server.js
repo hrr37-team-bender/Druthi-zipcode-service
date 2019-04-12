@@ -23,7 +23,6 @@ let distanceDictionary = {
 app.get('/stores', (req, res) => {
   let distance = distanceDictionary[req.query.distance] || 'all';
   let zipcode = req.query.zipcode;
-  console.log(distance, zipcode);
   let stores = [];
 
   db.query('SELECT * FROM zipcodes', (err, results) => {
@@ -53,5 +52,5 @@ app.get('/checkZipcode', (req, res) => {
   });
 });
 
-app.use(`/products/:id`, express.static(__dirname + '/../public'));
+app.use(express.static(__dirname + '/../public'));
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

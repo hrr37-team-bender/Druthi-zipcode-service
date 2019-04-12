@@ -17,7 +17,7 @@ var SingleStore = ({store, productId}) => {
             <div style={{fontSize: '12px'}}>Ready For PickUp Today </div>
             <div className="font_size_color_grey">If ordered by 8:00 PM PST</div>
           </div>}
-        <button className={soldOut ? 'btn btn-primary add_to_cart_button add_to_cart_disabled':'btn btn-primary add_to_cart_button'}>Add To Cart</button>
+        <button className={soldOut ? 'add_to_cart_button add_to_cart_disabled' : 'add_to_cart_button'}>Add To Cart</button>
       </div>
     </div>
   );
