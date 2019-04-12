@@ -9,12 +9,16 @@ var SingleStore = ({store, productId}) => {
   }
   return (
     <div className='single_store_container'>
-      {store.address}
-      {soldOut ? <p className="sold_out">SOLD OUT</p> :
-        <div>
-          <p>Ready For PickUp Today </p>
-          <p>If ordered by 8:00 PM PST</p>
-        </div>}
+      <div className="row">
+        <div className="headings_search">{store.address}</div>
+        <div className="font_size_color_grey">{store.street}</div>
+        {soldOut ? <div className="sold_out">SOLD OUT</div> :
+          <div>
+            <div style={{fontSize: '12px'}}>Ready For PickUp Today </div>
+            <div className="font_size_color_grey">If ordered by 8:00 PM PST</div>
+          </div>}
+        <button className={soldOut ? 'btn btn-primary add_to_cart_button add_to_cart_disabled':'btn btn-primary add_to_cart_button'}>Add To Cart</button>
+      </div>
     </div>
   );
 };

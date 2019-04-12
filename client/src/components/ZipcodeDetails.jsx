@@ -22,15 +22,22 @@ class ZipcodeDetails extends React.Component {
     return (
       <div>
         <div className="search_zipcode_container_display">
-          <div className="font_size_search bold_search">Store Pickup: Order Now to pick up Today</div>
-          <div className="font_size_search">In {details.address}</div><OtherStores productId={productId} zipcode={zipcode} />
-          <div className="font_size_search">If ordered by 8:00 PM PST</div>
+          <div className="headings_search">Store Pickup: Order Now to pick up Today</div>
+
+          <span className="font_size_color_grey float_left">
+            In {details.address}
+          </span>
+          <OtherStores productId={productId} zipcode={zipcode} />
+
+          <div className="font_size_color_grey">
+            If ordered by 8:00 PM PST
+          </div>
         </div>
         <div className="search_zipcode_container_display">
-          {afterThree ? <div className="font_size_search bold_search">Local Delivery: Order Now to get it Tomorrow</div> : <div className="font_size_search bold_search">Local Delivery: Order before 3 PM to get it Today</div>}
+          {afterThree ? <div className="headings_search">Local Delivery: Order Now to get it Tomorrow</div> : <div className="headings_search">Local Delivery: Order before 3 PM to get it Today</div>}
         </div>
         <div className="search_zipcode_container_display">
-          {afterEight ? <div className="font_size_search bold_search">Shipping Delivery: Order Now to get it Tomorrow</div> : <div className="font_size_search bold_search">Shipping Delivery: Order before 8 PM to get it Today</div>}
+          {afterEight ? <div className="headings_search">Shipping Delivery: Order Now to get it Tomorrow</div> : <div className="headings_search">Shipping Delivery: Order before 8 PM to get it Today</div>}
         </div>
       </div>
     );

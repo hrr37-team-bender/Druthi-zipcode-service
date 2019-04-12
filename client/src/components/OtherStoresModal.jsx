@@ -49,7 +49,9 @@ class OtherStoresModal extends React.Component {
     var {stores} = this.state;
     return <div>
       <p>Select a Store(Showing near ZIP "{zipcode}")</p>
+      <span>Showing stores within</span>
       <select
+        className='select_distance'
         value={this.state.distance}
         onChange={(e) => this.onChangeDistance(e.target.value, zipcode)}>
         <option value='ten_miles'>

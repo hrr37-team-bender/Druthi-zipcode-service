@@ -1,11 +1,11 @@
 .search_zipcode_container{
-  border: 1px solid black ;
+  border: 1px solid #0000003b ;
   width: 24%;
   padding: 1% 1% 0% 1%;
 }
 
 .search_zipcode_container_display{
-  border: 1px solid black ;
+  border: 1px solid #0000003b ;
   width: 24%;
   padding: 1%;
 }
@@ -18,8 +18,9 @@
   outline: none;
 }
 
-.font_size_search{
+.font_size_color_grey{
   font-size: 12px;
+  color:grey;
 }
 
 .bold_search{
@@ -30,8 +31,16 @@
   background-color: black;
   padding: 3%;
   font-size: small;
+  outline: none;
+  cursor: pointer;
 }
 
+.select_distance{
+  margin-left: 27%;
+  padding: 20px !important;
+  outline: none;
+  cursor: pointer;
+}
 .error{
   color: red;
   font-size: 14px;
@@ -39,7 +48,7 @@
 
 .single_store_container{
   border: 1px solid black ;
-  width: 32%;
+  width: 94%;
   padding: 2% 3% 2% 3%;
   border-radius: 8px;
   border-color: #8080807d;
@@ -57,6 +66,43 @@ body {
 
 .search_label{
   font-size: 15px;
+}
+
+.headings_search {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.float_left{
+  float: left;
+  margin-top: 3.5px;
+}
+
+.other_stores span{
+  font-size: 12px;
+  color: red;
+  padding-left: 6px;
+  cursor: pointer;
+}
+
+.add_to_cart_button{
+  float: right;
+  margin-top: -14%;
+  padding: 5px 6px;
+  font-size: 12px;
+  background-color: #4cae4c;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+.add_to_cart_button:hover{
+  background-color: #5c9d5b;
+}
+
+.add_to_cart_disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  margin-top: -42px;
 }
 
 
