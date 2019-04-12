@@ -16,14 +16,14 @@ class ZipcodeDetails extends React.Component {
   }
 
   render() {
-    var { details, zipcode } = this.props;
+    var { details, zipcode, productId } = this.props;
     var afterEight = moment().isAfter('08:00 pm');
     var afterThree = moment().isAfter('03:00 pm');
     return (
       <div>
         <div className="search_zipcode_container">
           <p>Store Pickup: Order Now to pick up Today</p>
-          <p>In {details.address}</p><OtherStores zipcode={zipcode} />
+          <p>In {details.address}</p><OtherStores productId={productId} zipcode={zipcode} />
           <p>If ordered by 8:00 PM PST</p>
         </div>
         <div className="search_zipcode_container">

@@ -39,7 +39,7 @@ class OtherStoresModal extends React.Component {
       });
   }
   render() {
-    var {zipcode} = this.props;
+    var {zipcode, productId} = this.props;
     var {stores} = this.state;
     return <div>
       <p>Select a Store(Showing near ZIP "{zipcode}")</p>
@@ -62,7 +62,7 @@ class OtherStoresModal extends React.Component {
           6.2 pc(All locations)
         </option>
       </select>
-      <DisplayStores stores={stores}/>
+      <DisplayStores productId={productId} stores={stores}/>
     </div>;
   }
 }

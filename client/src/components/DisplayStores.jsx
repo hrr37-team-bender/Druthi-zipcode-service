@@ -1,11 +1,11 @@
 import React from 'react';
 import SingleStore from './SingleStore.jsx';
 
-var DisplayStores = ({stores}) => {
+var DisplayStores = ({stores, productId}) => {
   return (
     <div>
       {stores.map((store, index) => {
-        return <SingleStore key={index} store={store}/>;
+        return <SingleStore productId={productId} key={index} store={store}/>;
       })}
     </div>
   );
