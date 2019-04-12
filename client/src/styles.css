@@ -19,3 +19,8 @@
   padding: 3%;
   font-size: small;
 }
+
+.error{
+  color: red;
+  font-size: 14px;
+}
