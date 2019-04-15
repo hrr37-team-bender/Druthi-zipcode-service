@@ -19,8 +19,9 @@ class ZipcodeDetails extends React.Component {
     var { details, zipcode, productId } = this.props;
     var afterEight = moment().isAfter('08:00 pm');
     var afterThree = moment().isAfter('03:00 pm');
+    console.log(moment().isAfter('07:00 am'), moment().isBefore('15:00'), moment().format('hh mm'));
     return (
-      <div>
+      <div className="delivery_details_container">
         <div className="search_zipcode_container_display">
           <div className="headings_search">Store Pickup: Order Now to pick up Today</div>
 

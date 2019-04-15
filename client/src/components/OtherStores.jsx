@@ -41,7 +41,7 @@ class OtherStores extends React.Component {
           contentLabel="Minimal Modal Example"
           style={customStyles}
         >
-          <button onClick={this.handleCloseModal}>Close Modal</button>
+          <button onClick={this.handleCloseModal}>Close</button>
           <OtherStoresModal productId={this.props.productId} zipcode={this.props.zipcode}/>
         </ReactModal>
       </div>

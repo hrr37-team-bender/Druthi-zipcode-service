@@ -56,7 +56,7 @@ class SearchZipcode extends React.Component {
     var {productId} = this.props;
     var zipExists = zipDetails.length !== 0;
     return (
-      <div>
+      <div className="search_and_details_container">
         {!zipExists ? <div className="search_zipcode_container">
           <div>
             <label className="search_label">
